@@ -1,0 +1,10 @@
+excerpt_separator: ""
+pygments: true
+markdown: kramdown
+url: http://hexadevti.github.io
+title: Gentrop Blog
+email: luciano.faria@gentrop.com
+author: Luciano Faria
+description: My awesome new site
+paginate: 5
+google_analytics: 
