@@ -4,49 +4,38 @@ layout: blog
 
 
 <div class="col-md-8">
-			<div class="Top-News">
-                 {% for post in paginator.posts %}
-				<div class="block-News text-center col-md-12">
-					<div class="Top-img-news">
-						<img src="style/images/blog/blog-post-1.png" alt="blog" width="293" height="205">
-					<div class="data-news text-left">
-						<img src="style/images/blog/Img-User.png" alt="blog-user" width="30" height="30">
-                        <p>By:<a href="#"> Mohamed Habaza</a> | On: Feb 17, 2015 | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
-					</div>
-				</div>
-				<div class="Bottom-title-news wide-blog">
-					<div class="title-news text-left">
-						<a href="#"><h2>{{ post.title }} - {{ post.excerpt }}</h2></a>
-						<p>sdsdfsdfsd</p>
-					</div>
-					<div class="Get-news text-left">
-						<a href="#">Read More</a>
-					</div>
-				</div>
-				</div>
+    <div class="Top-News">
+        {% for post in paginator.posts %}
+        <div class="block-News text-center col-md-12">
+            <div class="Top-img-news">
+                <img src="style/images/blog/blog-post-1.png" alt="blog" width="293" height="205">
+            <div class="data-news text-left">
+                <img src="style/images/blog/Img-User.png" alt="blog-user" width="30" height="30">
+                <p>By:<a href="#"> Mohamed Habaza</a> | On: Feb 17, 2015 | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
+            </div>
+        </div>
+        <div class="Bottom-title-news wide-blog">
+            <div class="title-news text-left">
+                <a href="#"><h2>{{ post.title }}</h2></a>
+                <p>{{ post.excerpt }}</p>
+            </div>
+            <div class="Get-news text-left">
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        </div>
 
-                {% endfor %}
+        {% endfor %}
 
-			</div>
-			
-			<!-- Start Pagination -->
-            
-           
-			<div id="Pagination" class="light-wrapper Pagination-Full">
-				<div class="row">
-					<div class="pager col-md-12 text-center">
-						<ul>
-							<li class="selected"><span class="">1</span></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#"><i class="fa fa-long-arrow-right"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			
-			<!-- End Pagination -->
+    </div>
+    
+    <!-- Start Pagination -->
+    
+    {% include pagination.html %}
 
-		</div>
+    <!-- End Pagination -->
+
+</div>
 
 
 

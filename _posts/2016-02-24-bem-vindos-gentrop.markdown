@@ -4,9 +4,8 @@ title: Bem-vindos à Gentrop!
 layout: post
 ---
 Empresa líder em soluções Salesforce Marketing Cloud.
-
 A GENTROP É ESPECIALIZADA NA PLATAFORMA SALESFORCE MARKETING CLOUD.
-
+<!--more-->
 SOBRE NÓS
 
 O grupo Gentrop teve origem em Palo Alto, California em 2009. Nos EUA a Gentrop é focada em soluções de EPM (Enterprise Project Management). Em 2011, a empresa abriu sua primeira filial em São Paulo, com foco em Consultoria em Tecnologia da Informação. No Portfolio da Gentrop temos clientes como: Chevron, Audatex, Covidien, Abbott Labs, Zimmer, Cisco, Cadence, Fairchild, Siemens Panduit, Cobasi e Aspire Public Schools.
