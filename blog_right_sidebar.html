@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!doctype html>
 <html>
 <head>
@@ -390,119 +394,27 @@
 	<div class="row">
 		<div class="col-md-8">
 			<div class="Top-News">
+                 {% for post in paginator.posts %}
 				<div class="block-News text-center col-md-12">
 					<div class="Top-img-news">
 						<img src="style/images/blog/blog-post-1.png" alt="blog" width="293" height="205">
 					<div class="data-news text-left">
 						<img src="style/images/blog/Img-User.png" alt="blog-user" width="30" height="30">
-                        <p>By:<a href="#"> Mohamed Habaza</a> | On: Feb 17, 2015 | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
+                        <p>By:<a href="#"> Mohamed Habaza</a> | On: {{ post.date | date: "%b %-d, %Y" }} | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
 					</div>
 				</div>
 				<div class="Bottom-title-news wide-blog">
 					<div class="title-news text-left">
-						<a href="#"><h2>Blog Title Goes Here</h2></a>
-						<p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis vitae velit in neque dictum blandit, Proin in iaculis neque scelerisque ut. </p>
+						<a href="#"><h2>{{ post.title }}</h2></a>
+						<p>{{ post.summary }}</p>
 					</div>
 					<div class="Get-news text-left">
-						<a href="#">Read More</a>
+						<a href="{{ post.url | prepend: site.baseurl }}">Read More</a>
 					</div>
 				</div>
 				</div>
+                {% endfor %}
 
-				<div class="block-News text-center col-md-12">
-					<div class="Top-img-news">
-						<img src="style/images/blog/blog-post-2.png" alt="blog" width="293" height="205">
-                        <div class="data-news text-left">
-							<img src="style/images/blog/Img-User.png" alt="blog-user" width="30" height="30">
-              <p>By:<a href="#"> Mohamed Habaza</a> | On: Feb 17, 2015 | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
-                        </div>
-                    </div>
-					<div class="Bottom-title-news wide-blog">
-                    	<div class="title-news text-left">
-							<a href="#"><h2>Blog Title Goes Here</h2></a>
-                            <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis vitae velit in neque dictum blandit, Proin in iaculis neque scelerisque ut. </p>
-                        </div>
-                        <div class="Get-news text-left">
-                        	<a href="#">Read More</a>
-                        </div>
-                    </div>
-				</div>
-
-				<div class="block-News text-center col-md-12">
-					<div class="Top-img-news">
-						<img src="style/images/blog/blog-post-3.png" alt="blog" width="293" height="205">
-                        <div class="data-news text-left">
-						    <a class="fancybox-media video" href="https://www.youtube.com/watch?v=K2FOLzqsWTg"><i class="fa fa-play-circle"></i></a>
-							<img src="style/images/blog/Img-User.png" alt="blog-user" width="30" height="30">
-							<p>By:<a href="#"> Mohamed Habaza</a> | On: Feb 17, 2015 | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
-                        </div>
-                    </div>
-					<div class="Bottom-title-news wide-blog">
-                    	<div class="title-news text-left">
-							<a href="#"><h2>Blog Title Goes Here</h2></a>
-                            <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis vitae velit in neque dictum blandit, Proin in iaculis neque scelerisque ut. </p>
-                        </div>
-                        <div class="Get-news text-left">
-                        	<a href="#">Read More</a>
-                        </div>
-                    </div>
-				</div>
-				<div class="block-News text-center col-md-12">
-					<div class="Top-img-news">
-						<iframe height="297" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/31617466&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-                        <div class="data-news text-left">
-							<img src="style/images/blog/Img-User.png" alt="blog-user" width="30" height="30">
-                            <p>By:<a href="#"> Mohamed Habaza</a> | On: Feb 17, 2015 | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
-                        </div>
-                    </div>
-					<div class="Bottom-title-news wide-blog">
-                    	<div class="title-news text-left">
-							<a href="#"><h2>Blog Title Goes Here</h2></a>
-                            <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis vitae velit in neque dictum blandit, Proin in iaculis neque scelerisque ut. </p>
-                        </div>
-                        <div class="Get-news text-left">
-                        	<a href="#">Read More</a>
-                        </div>
-                    </div>
-				</div>
-
-				<div class="block-News text-center col-md-12">
-					<div class="Top-img-news">
-						<img src="style/images/blog/blog-post-1.png" alt="blog" width="293" height="205">
-                        <div class="data-news text-left">
-							<img src="style/images/blog/Img-User.png" alt="blog-user" width="30" height="30">
-                            <p>By:<a href="#"> Mohamed Habaza</a> | On: Feb 17, 2015 | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
-                        </div>
-                    </div>
-					<div class="Bottom-title-news wide-blog">
-                    	<div class="title-news text-left">
-							<a href="#"><h2>Blog Title Goes Here</h2></a>
-                            <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis vitae velit in neque dictum blandit, Proin in iaculis neque scelerisque ut. </p>
-                        </div>
-                        <div class="Get-news text-left">
-                        	<a href="#">Read More</a>
-                        </div>
-                    </div>
-				</div>
-
-				<div class="block-News text-center col-md-12">
-					<div class="Top-img-news">
-						<img src="style/images/blog/blog-post-2.png" alt="blog" width="293" height="205">
-                        <div class="data-news text-left">
-							<img src="style/images/blog/Img-User.png" alt="blog-user" width="30" height="30">
-                            <p>By:<a href="#"> Mohamed Habaza</a> | On: Feb 17, 2015 | Category: <a href="#">Videos</a> | Tags: <a href="#">business</a>, <a href="#">videos</a></p>
-                        </div>
-                    </div>
-					<div class="Bottom-title-news wide-blog">
-                    	<div class="title-news text-left">
-							<a href="#"><h2>Blog Title Goes Here</h2></a>
-                            <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis vitae velit in neque dictum blandit, Proin in iaculis neque scelerisque ut. </p>
-                        </div>
-                        <div class="Get-news text-left">
-                        	<a href="#">Read More</a>
-                        </div>
-                    </div>
-				</div>
 			</div>
 			
 			<!-- Start Pagination -->
