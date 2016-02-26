@@ -1,11 +1,134 @@
 ---
 layout: default
 ---
-<div class="post-header mb2">
-  <h1 class="py2">{{ page.title }}</h1>
-  <span class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</span>
+<div class="col-md-8">
+<div class="Title-Single">
+    <div class="Top-Title-Blog">
+        <h2>{{ page.title }}</h2>
+    </div>
+    <div class="Bottom-Title-Blog">
+        <ul>
+            {% assign author = site.data.authors[page.author] %}
+            {% if author %}
+            <li><i class="fa fa-user"></i><p>Author : <a href="{{ author.web }}" target="_blank">{{ author.name }}</a></p></li>
+            {% endif %}
+            <li><i class="fa fa-clock-o"></i><p>Date : {{ page.date | date: "%d/%m/%Y" }}</p></li>
+            <li><i class="fa fa-folder-open"></i><p>Categories : 
+                {% assign cat_size = page.categories | size %}
+                {% if cat_size != 0 %}
+                    {% for category in page.categories %}
+                        {% assign cat_slug = category | slugify  %}
+                        <a href="/categories/{{cat_slug | prepend: site.baseurl}}">{{ category | capitalize }}</a>
+                    {% endfor %}
+                {% endif %}</p></li>
+            <!--<li><i class="fa fa-comment"></i><p>Comments : <a href="#">31</a></p></li>
+            <li><i class="fa fa-heart"></i><p>Like : <a href="#">3</a></p></li>-->
+        </ul>
+    </div>
+</div>
+<div class="Single-Blog-Content">
+    <div class="Post-Images">
+        {% if page.hero %}
+				{% if page.hero_high %}
+					<a href="/{{page.hero_high}}"><img src="/{{page.hero | prepend: site.baseurl}}" alt="{{page.hero_alt}}"></a>
+				{% else %}
+					<img src="/{{page.hero | prepend: site.baseurl}}" alt="{{page.hero_alt}}">
+				{% endif %}
+		{% endif %}
+    </div>
+    <div class="Post-Content">
+        {{ content }}
+    </div>
 </div>
 
-<article class="post-content">
-  {{ content }}
-</article>
+<div class="Under-Post">
+    <div class="post-tags">
+        <i class="fa fa-tags"></i>
+            {% assign tag_size = page.tags | size %}
+            {% if tag_size != 0 %}
+                {% for tag in page.tags %}
+                    {% assign tag_slug = tag | slugify %} 
+                    <a href="/tags/{{tag_slug | prepend: site.baseurl}}">{{ tag | capitalize }}</a>
+                {% endfor %} 
+            {% endif %}
+            
+        
+    </div>
+    <div id="shareIconsCount" class="Social-Content Social-Blog"></div>
+</div>
+<div class="divcod50"></div>
+<!--<div class="Single-Blog-Comment">
+    <div class="Title-Comment">
+        <h3>3 Comments</h2>
+    </div>
+    <div class="line-break"></div>
+    <div class="divcod20"></div>
+    <div class="Comments-Post">
+        <ul>
+            <li>
+                <div class="Block-Comment">
+                    <img src="style/images/blog/Img-Comment.png" alt="post footer" width="70" height="70">
+                    <h4>Habaza</h4>
+                    <span>Oct 14, 2014 - 08:07 pm <a href="#">Reply</a></span>
+                    <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. </p>
+                </div>
+                <ul>
+                    <li>
+                        <div class="Block-Comment">
+                            <img src="style/images/blog/Img-Comment.png" alt="post footer" width="70" height="70">
+                            <h4>Habaza</h4>
+                            <span>Oct 14, 2014 - 08:07 pm <a href="#">Reply</a></span>
+                            <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. </p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="Block-Comment">
+                    <img src="style/images/blog/Img-Comment.png" alt="post footer" width="70" height="70">
+                    <h4>Habaza</h4>
+                    <span>Oct 14, 2014 - 08:07 pm <a href="#">Reply</a></span>
+                    <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. </p>
+                </div>
+            </li>
+            <li>
+                <div class="Block-Comment">
+                    <img src="style/images/blog/Img-Comment.png" alt="post footer" width="70" height="70">
+                    <h4>Habaza</h4>
+                    <span>Oct 14, 2014 - 08:07 pm <a href="#">Reply</a></span>
+                    <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="Add-Comment">
+    <div class="Title-Comment">
+        <h3>Add Comment</h2>
+    </div>
+    <div class="line-break"></div>
+    <div class="divcod30"></div>
+    <div class="Comment-Form">
+        <form action="#" class="leave-comment contact-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-input">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-input">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-input">
+                        <input type="submit" class="btn btn-large main-bg" value="Add Comment">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-input">
+                        <textarea class="txt-box textArea" name="message" cols="40" rows="7" id="messageTxt" placeholder="Comment" spellcheck="true" required></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>-->
+</div>
