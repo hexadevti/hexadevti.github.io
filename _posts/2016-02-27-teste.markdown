@@ -2,5 +2,7 @@
 published: true
 title: teste
 layout: post
+tags: [Gentrop]
+categories: [Gentrop]
 ---
 tetstsetsetse
